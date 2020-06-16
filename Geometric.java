@@ -1,10 +1,13 @@
+import java.lang.Math;
+
 public class Geometric extends AbstractSeries {
 
-    // instance variables
+    double term = 0.0;
+    int element = 0;
     
     public double next() {
-
-        // implement the method
-
+        term = term + 1/Math.pow(2,element);
+        element++;
+        return term;
     }
 }

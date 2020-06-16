@@ -1,28 +1,63 @@
 public class Book {
 
-    // Your variables declaration here
+    String author;
+    String title;
+    int year;
 
     public Book (String author, String title, int year) {
-        // Your code here
+        this.author = author;
+        this.title = title;
+        this.year = year;
     }
 
     public String getAuthor() {
-        // Your code here
+        return author;
     }
 
     public String getTitle() {
-        // Your code here
+        return title;
     }
 
     public int getYear() {
-        // Your code here
+        return year;
     }
 
     public boolean equals(Object other) {
-        // Your code here
+        
+
+        if(!(other instanceof Book) || other == null){
+            return false;
+        }
+        
+        Book otherBook = (Book) other;
+    
+        if(this.getAuthor() != otherBook.getAuthor() || this.getTitle() != otherBook.getTitle() || this.getYear() != otherBook.getYear()){
+            if(this.author == null){
+                if(otherBook.author != null){
+                    return false;
+                }
+            }
+
+            if(this.title == null){
+                if(otherBook.title != null){
+                    return false;
+                }
+            }
+
+            if(this.getAuthor().equals(otherBook.getAuthor()) && this.getTitle().equals(otherBook.getTitle()) && this.getYear() == otherBook.getYear()){
+                return true;
+            }
+            return false;
+        }
+       
+       
+       
+        
+
+        return true;
     }
 
     public String toString() {
-        // Your code here
+        return "Author: " + title +" (" + year + ")";
     }
 }
